@@ -496,8 +496,11 @@
             <textarea class="modal-form-field modal-form-text" name="user-text" placeholder="Введите текст" title="Оставьте комметарий"></textarea>
           </label>
           <label class="modal-form-check">
-            <input type="checkbox" name="user-agree" value="yes" checked>
-            Соглашаюсь с рассылкой и принимаю <a class="modal-link-agree" href="#">Условия договора</a>
+            <svg class="modal-check-icon" width="16" height="15">
+              <use href="./images/icons.svg#icon-check"></use>
+            </svg>
+            <input class="visually-hidden" type="checkbox" name="user-agree" value="yes" checked>
+            Соглашаюсь с рассылкой и принимаю <a class="modal-link-agree link" href="#">Условия договора</a>
           </label>
           <button class="modal-form-button" type="submit">Отправить</button>
         </form>

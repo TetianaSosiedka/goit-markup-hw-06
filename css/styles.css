@@ -715,12 +715,15 @@ p {
   color: var(--color-headlines);
 }
 .modal-form-part {
-  position: relative;
   font-family: var(--font-main);
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--color-text);
+}
+.input-wrap {
+  display: block;
+  position: relative;
 }
 .modal-form-field {
   display: block;
@@ -740,7 +743,8 @@ p {
 }
 .modal-user-icon {
   position: absolute;
-  top: 27px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 12px;
   transition: fill 250ms var(--timing-function);
 }
@@ -751,6 +755,7 @@ p {
   margin-bottom: 20px;
   padding: 12px 16px;
   height: 120px;
+  resize: none;
   overflow: auto;
 }
 .modal-form-text::placeholder {
@@ -761,7 +766,8 @@ p {
   color: rgba(117, 117, 117, 0.5);
 }
 .modal-form-check {
-  display: block;
+  display: inline-flex;
+  align-items: baseline;
   margin-bottom: 30px;
   font-family: var(--font-main);
   font-size: 14px;
@@ -769,14 +775,26 @@ p {
   letter-spacing: 0.03em;
   color: var(--color-text);
 }
-.modal-check-icon {
-  display: inline-block;
-  border: 
+.check-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
   border-radius: 2px;
+  background-color: transparent;
+  border: 2px solid #000000;
+  box-shadow: #ffffff -1px 3px 2px -1px, #75757569 -1px 4px 2px;
+  /*transition: background-color 250ms var(--timing-function),
+    border 250ms var(--timing-function), box-shadow 250ms var(--timing-function);*/
 }
-
-.modal-form-check:checked .modal-check-icon{
+.modal-check-icon {
   fill: var(--bg-main);
+}
+.modal-check:checked + .check-wrap {
+  border: none;
+  box-shadow: none;
   background-color: var(--color-decor);
 }
 .modal-link-agree {
